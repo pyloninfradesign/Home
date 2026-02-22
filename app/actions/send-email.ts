@@ -3,6 +3,7 @@
 import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+const CONTACT_EMAIL = 'info_pyloninfra@protonmail.com'
 
 export async function sendEmail(formData: {
   name: string
@@ -11,11 +12,9 @@ export async function sendEmail(formData: {
   message: string
   phone?: string
 }) {
-  const contactEmail = process.env.CONTACT_EMAIL
-
   console.log('=== Resend Email Attempt ===')
   console.log('API Key exists:', !!process.env.RESEND_API_KEY)
-  console.log('Contact Email:', contactEmail)
+  console.log('Contact Email:', CONTACT_EMAIL)
   console.log('Form Data:', formData)
 
   if (!process.env.RESEND_API_KEY) {
@@ -31,7 +30,7 @@ export async function sendEmail(formData: {
 
     const response = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: contactEmail || 'info_pyloninfra@protonmail.com',
+      to: CONTACT_EMAIL,
       replyTo: formData.email,
       subject: `New Contact Form: ${formData.subject}`,
       html: `

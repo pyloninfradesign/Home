@@ -6,4 +6,3 @@ node_modules/
 .next/
 dist/
 # ...existing code...
-.env.local

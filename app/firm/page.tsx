@@ -49,28 +49,34 @@ const values = [
 
 const teamMembers = [
   {
-    name: 'Ar. Rajesh Patel',
-    role: 'Founder & Principal Architect',
+    name: 'Payoswini Priyadarshini',
+    role: 'Founder',
     image: '/images/team-founder.jpg',
-    bio: 'With over 20 years of experience in architectural practice, Rajesh founded Pylon Infra Design with a vision to create architecture that bridges vision and reality. His expertise spans institutional, residential, and urban design.',
+    bio: 'With over 15 years of experience in architectural practice, Payoswini founded Pylon Infra Design with a vision to create architecture that bridges vision and reality. His expertise spans institutional, residential, and urban design.',
   },
   {
-    name: 'Ar. Priya Mohanty',
+    name: 'Ar. Jyotsnamayee Sahoo',
     role: 'Head Architect',
     image: '/images/team-architect.jpg',
-    bio: 'Priya brings a refined design sensibility and deep knowledge of sustainable building practices. She leads the design team in translating complex briefs into elegant architectural solutions.',
+    bio: 'Jyotsnamayee brings a refined design sensibility and deep knowledge of sustainable building practices. She leads the design team in translating complex briefs into elegant architectural solutions.',
   },
   {
-    name: 'Er. Sunil Behera',
+    name: 'Prabin Kumar Satapathy',
     role: 'Structural Engineer',
     image: '/images/team-engineer.jpg',
-    bio: 'Sunil ensures every structure we design is built to last. His structural engineering expertise guarantees safety, durability, and material efficiency across all project types.',
+    bio: 'Prabin ensures every structure we design is built to last. His structural engineering expertise guarantees safety, durability, and material efficiency across all project types.',
   },
   {
-    name: 'Ananya Das',
+    name: 'Puravi Mohapatra',
     role: 'Design Lead',
     image: '/images/team-designer.jpg',
-    bio: 'Ananya leads our interior and visualization team, bringing spaces to life through thoughtful material selection, lighting design, and spatial planning.',
+    bio: 'Puravi leads our interior and visualization team, bringing spaces to life through thoughtful material selection, lighting design, and spatial planning.',
+  },
+  {
+    name: 'Saptarsini Roul',
+    role: 'Design Team',
+    image: '/images/Sapt.jpg',
+    bio: 'Puravi leads our interior and visualization team, bringing spaces to life through thoughtful material selection, lighting design, and spatial planning.',
   },
 ]
 

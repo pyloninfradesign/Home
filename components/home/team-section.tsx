@@ -8,24 +8,34 @@ import { cn } from '@/lib/utils'
 
 const teamMembers = [
   {
-    name: 'Ar. Rajesh Patel',
-    role: 'Founder & Principal Architect',
+    name: 'Payoswini Priyadarshini',
+    role: 'Founder ',
     image: '/images/team-founder.jpg',
   },
   {
-    name: 'Ar. Priya Mohanty',
+    name: 'Ar. Jyotsnamayee Sahoo',
     role: 'Head Architect',
     image: '/images/team-architect.jpg',
   },
   {
-    name: 'Er. Sunil Behera',
+    name: 'Prabin Kumar Satapathy',
     role: 'Structural Engineer',
     image: '/images/team-engineer.jpg',
   },
   {
-    name: 'Ananya Das',
+    name: 'Puravi Mohapatra',
     role: 'Design Lead',
     image: '/images/team-designer.jpg',
+  },
+  {
+    name: 'Saptarsini Roul',
+    role: 'Design Team',
+    image: '/images/Sapt.jpg',
+  },
+  {
+    name: 'Sunita panigrahi',
+    role: 'Design Team',
+    image: '/images/Sunita.jpg',
   },
 ]
 

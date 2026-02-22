@@ -76,7 +76,13 @@ const teamMembers = [
     name: 'Saptarsini Roul',
     role: 'Design Team',
     image: '/images/Sapt.jpg',
-    bio: 'Puravi leads our interior and visualization team, bringing spaces to life through thoughtful material selection, lighting design, and spatial planning.',
+    bio: 'Saptarsini leads our interior and visualization team, bringing spaces to life through thoughtful material selection, lighting design, and spatial planning.',
+  },
+  {
+    name: 'Sunita panigrahi',
+    role: 'Design Team',
+    image: '/images/Sunita.jpg',
+    bio: 'Sunita leads our interior and visualization team, bringing spaces to life through thoughtful material selection, lighting design, and spatial planning.',
   },
 ]
 

@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
+import { logAuditEvent } from "@/lib/audit";
 import { supabaseAdmin } from "@/lib/supabase-admin";
 import { Breadcrumb } from "@/components/admin/breadcrumb";
 import { BackLink } from "@/components/admin/back-link";
@@ -85,6 +86,24 @@ export default async function NewUserPage({ searchParams }: { searchParams: Reco
       }
 
       revalidatePath("/admin/users");
+      await logAuditEvent({
+        action: "USER_CREATE",
+        actor: {
+          id: currentSession.user.id,
+          email: currentSession.user.email,
+          role: currentSession.user.role,
+          name: currentSession.user.name,
+        },
+        target: {
+          type: "user",
+          id: created?.user?.id,
+          label: email,
+        },
+        details: {
+          role,
+          name: name ?? "",
+        },
+      });
       redirect("/admin/users?created=1");
     } catch (err) {
       const message = err instanceof Error ? err.message : "Failed to create user";

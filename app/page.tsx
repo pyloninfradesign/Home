@@ -5,13 +5,19 @@ import { ServicesSection } from '@/components/home/services-section'
 import { ProcessSection } from '@/components/home/process-section'
 import { TeamSection } from '@/components/home/team-section'
 import { CTASection } from '@/components/home/cta-section'
+import { getFeaturedProjects, getHeroProjects } from '@/lib/projects'
 
-export default function Home() {
+export default async function Home() {
+  const [heroProjects, featuredProjects] = await Promise.all([
+    getHeroProjects(),
+    getFeaturedProjects(),
+  ])
+
   return (
     <>
-      <HeroSection />
+      <HeroSection projects={heroProjects} />
       <PhilosophySection />
-      <FeaturedProjectsSection />
+      <FeaturedProjectsSection projects={featuredProjects} />
       <ServicesSection />
       <ProcessSection />
       <TeamSection />

@@ -5,19 +5,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { projects } from '@/lib/projects'
+import type { Project } from '@/lib/projects'
 
-const featuredSlugs = [
-  'circuit-house-phulbani',
-  '50-bedded-hostel-kalahandi',
-  'beautification-jharsuguda-airport',
-]
+interface FeaturedProjectsSectionProps {
+  projects: Project[]
+}
 
-const featuredProjects = projects.filter((p) =>
-  featuredSlugs.includes(p.slug)
-)
-
-export function FeaturedProjectsSection() {
+export function FeaturedProjectsSection({
+  projects,
+}: FeaturedProjectsSectionProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -70,7 +66,7 @@ export function FeaturedProjectsSection() {
 
         {/* Projects Grid */}
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {featuredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <Link
               key={project.slug}
               href={`/projects/${project.slug}`}

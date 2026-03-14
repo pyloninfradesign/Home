@@ -4,29 +4,22 @@ import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import type { Project } from '@/lib/projects'
 
-const heroSlides = [
-  {
-    image: '/images/circuit-house.jpg',
-    title: 'Circuit House',
-    location: 'Phulbani, Odisha',
-    category: 'Government Architecture',
-  },
-  {
-    image: '/images/hostel-kalahandi.jpg',
-    title: '50-Bedded Hostel',
-    location: 'Dumarpadar, Kalahandi',
-    category: 'Institutional Architecture',
-  },
-  {
-    image: '/images/beautification-airport.jpg',
-    title: 'Airport Road Beautification',
-    location: 'Jharsuguda, Odisha',
-    category: 'Urban Design',
-  },
-]
+interface HeroSectionProps {
+  projects: Project[]
+}
 
-export function HeroSection() {
+export function HeroSection({ projects }: HeroSectionProps) {
+  const heroSlides = projects.map((project) => ({
+    image: project.heroImage ?? project.image,
+    title: project.title,
+    location: project.location,
+    category: project.category,
+    heroTitle: project.heroTitle ?? 'Strength in Structure.',
+    heroSubtitle: project.heroSubtitle ?? 'Vision in Design.',
+    excerpt: project.heroDetails ?? project.heroExcerpt ?? project.description,
+  }))
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
 
@@ -98,15 +91,14 @@ export function HeroSection() {
 
           {/* Headline */}
           <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
-            <span className="block">Strength in Structure.</span>
+            <span className="block">{heroSlides[currentSlide].heroTitle}</span>
             <span className="block font-light italic text-primary-foreground/80">
-              Vision in Design.
+              {heroSlides[currentSlide].heroSubtitle}
             </span>
           </h1>
 
           <p className="mt-6 max-w-lg text-sm leading-relaxed text-primary-foreground/70 md:text-base">
-            Contemporary architecture shaped by clarity, sustainability, and
-            technical precision.
+            {heroSlides[currentSlide].excerpt}
           </p>
 
           {/* CTAs */}

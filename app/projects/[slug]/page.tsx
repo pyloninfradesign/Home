@@ -3,9 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-import { projects, getProjectBySlug } from '@/lib/projects'
+import { getProjectBySlug, getProjects } from '@/lib/projects'
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const projects = await getProjects()
   return projects.map((project) => ({ slug: project.slug }))
 }
 
@@ -16,10 +17,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const project = getProjectBySlug(slug)
-  if (!project) return { title: 'Project Not Found' }
+  const resolvedProject = await project
+  if (!resolvedProject) return { title: 'Project Not Found' }
   return {
-    title: `${project.title} | Pylon Infra Design`,
-    description: project.description,
+    title: `${resolvedProject.title} | Pylon Infra Design`,
+    description: resolvedProject.description,
   }
 }
 
@@ -29,7 +31,10 @@ export default async function ProjectDetailPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const project = getProjectBySlug(slug)
+  const [project, projects] = await Promise.all([
+    getProjectBySlug(slug),
+    getProjects(),
+  ])
 
   if (!project) {
     notFound()

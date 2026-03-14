@@ -3,6 +3,7 @@ import { Montserrat, Lora, Roboto_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+import { SiteChat } from '@/components/site-chat'
 import './globals.css'
 
 const montserrat = Montserrat({
@@ -47,6 +48,7 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <SiteChat />
         <Analytics />
       </body>
     </html>

@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import type { AppUserRole } from "@/lib/auth";
 
-// Edge-safe auth helper for middleware:
+// Edge-safe auth helper for proxy/middleware:
 // - No providers or adapters (avoids Node-only modules like nodemailer/stream)
 // - Only verifies JWT produced by the main NextAuth config
 export const auth = NextAuth({

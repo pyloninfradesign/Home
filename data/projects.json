@@ -1,0 +1,274 @@
+{
+  "projects": [
+    {
+      "projectId": "SEED-20240222-000001",
+      "createdAt": "2024-02-22T00:00:01.000Z",
+      "featuredInHero": true,
+      "heroExcerpt": "A government-scale circuit house designed with structural clarity and civic presence.",
+      "heroImage": "/images/circuit-house.jpg",
+      "slug": "circuit-house-phulbani",
+      "title": "Circuit House",
+      "location": "Phulbani, Odisha",
+      "category": "Government / Architecture",
+      "filterCategory": "Architecture",
+      "image": "/images/circuit-house.jpg",
+      "description": "A government-scale circuit house designed with structural clarity and civic presence. The project combines functional program requirements with a dignified architectural expression befitting its institutional purpose.",
+      "projectDetails": "A government-scale circuit house designed with structural clarity and civic presence. The project combines functional program requirements with a dignified architectural expression befitting its institutional purpose.",
+      "photos": [
+        {
+          "name": "circuit-house.jpg",
+          "url": "/images/circuit-house.jpg",
+          "isHero": true
+        }
+      ],
+      "plans": [],
+      "details": {
+        "type": "Government / Institutional",
+        "area": "12,000 sq. ft.",
+        "status": "Completed",
+        "services": [
+          "Architectural Design",
+          "Structural Design",
+          "Project Management"
+        ]
+      },
+      "designIntent": "To create a welcoming yet authoritative structure that serves as a hub for visiting dignitaries and officials, with emphasis on spatial efficiency and local material integration.",
+      "challenges": "Balancing the formality required of a government facility with the comfort expected of a guest house, while adhering to PWD standards and local climatic considerations."
+    },
+    {
+      "projectId": "SEED-20240222-000002",
+      "createdAt": "2024-02-22T00:00:02.000Z",
+      "featuredInHero": true,
+      "heroExcerpt": "A comprehensive institutional hostel with complete architectural narrative for 50 residents.",
+      "heroImage": "/images/hostel-kalahandi.jpg",
+      "slug": "50-bedded-hostel-kalahandi",
+      "title": "50-Bedded Hostel",
+      "location": "Dumarpadar, Kalahandi",
+      "category": "Institutional Architecture",
+      "filterCategory": "Architecture",
+      "image": "/images/hostel-kalahandi.jpg",
+      "description": "A comprehensive institutional hostel with complete architectural narrative including elevations, plans, and spatial organization for 50 residents. Designed for durability and communal well-being.",
+      "projectDetails": "A comprehensive institutional hostel with complete architectural narrative including elevations, plans, and spatial organization for 50 residents. Designed for durability and communal well-being.",
+      "photos": [
+        {
+          "name": "hostel-kalahandi.jpg",
+          "url": "/images/hostel-kalahandi.jpg",
+          "isHero": true
+        }
+      ],
+      "plans": [],
+      "details": {
+        "type": "Institutional",
+        "area": "18,500 sq. ft.",
+        "status": "Completed",
+        "services": [
+          "Architectural Design",
+          "Interior Design",
+          "Structural Design",
+          "Quantity Survey"
+        ]
+      },
+      "designIntent": "To provide a comfortable, well-ventilated living environment that fosters community among residents while maintaining individual privacy and security.",
+      "challenges": "Designing cost-effective student housing that meets ventilation and natural lighting requirements in a rural setting, with sustainable material choices."
+    },
+    {
+      "projectId": "SEED-20240222-000003",
+      "createdAt": "2024-02-22T00:00:03.000Z",
+      "featuredInHero": true,
+      "heroExcerpt": "A landscape and urban design initiative to transform the approach road to Jharsuguda Airport.",
+      "heroImage": "/images/beautification-airport.jpg",
+      "slug": "beautification-jharsuguda-airport",
+      "title": "Beautification of Jharsuguda Airport Road",
+      "location": "Jharsuguda, Odisha",
+      "category": "Urban Design",
+      "filterCategory": "Urban Design",
+      "image": "/images/beautification-airport.jpg",
+      "description": "A landscape and urban design initiative to transform the approach road to Jharsuguda Airport into a visually compelling, functional corridor with modern infrastructure and greenery.",
+      "projectDetails": "A landscape and urban design initiative to transform the approach road to Jharsuguda Airport into a visually compelling, functional corridor with modern infrastructure and greenery.",
+      "photos": [
+        {
+          "name": "beautification-airport.jpg",
+          "url": "/images/beautification-airport.jpg",
+          "isHero": true
+        }
+      ],
+      "plans": [],
+      "details": {
+        "type": "Urban / Landscape Design",
+        "area": "3.2 km corridor",
+        "status": "Completed",
+        "services": [
+          "Architectural Design",
+          "Project Management"
+        ]
+      },
+      "designIntent": "To create a memorable first impression of Jharsuguda through thoughtful landscaping, street furniture, and lighting that reflects the region's progressive vision.",
+      "challenges": "Working within existing road infrastructure constraints while introducing significant visual improvement, ensuring low-maintenance landscaping suitable for the local climate."
+    },
+    {
+      "projectId": "SEED-20240222-000004",
+      "createdAt": "2024-02-22T00:00:04.000Z",
+      "featuredInHero": false,
+      "slug": "simplex-chandaka",
+      "title": "Simplex, Chandaka",
+      "location": "Chandaka, Bhubaneswar",
+      "category": "Residential / Multi-unit",
+      "filterCategory": "Residential",
+      "image": "/images/simplex-chandaka.jpg",
+      "description": "A detailed residential multi-unit development with carefully planned floor layouts optimizing space utilization and natural light penetration across all units.",
+      "projectDetails": "A detailed residential multi-unit development with carefully planned floor layouts optimizing space utilization and natural light penetration across all units.",
+      "photos": [
+        {
+          "name": "simplex-chandaka.jpg",
+          "url": "/images/simplex-chandaka.jpg"
+        }
+      ],
+      "plans": [],
+      "details": {
+        "type": "Residential / Multi-unit",
+        "area": "8,200 sq. ft.",
+        "status": "Completed",
+        "services": [
+          "Architectural Design",
+          "Interior Design",
+          "Structural Design"
+        ]
+      },
+      "designIntent": "To maximize livable space within a compact footprint while ensuring each unit receives adequate ventilation, natural light, and a sense of openness.",
+      "challenges": "Optimizing the site layout to accommodate multiple units without compromising on individual unit quality, parking, and common amenities."
+    },
+    {
+      "projectId": "SEED-20240222-000005",
+      "createdAt": "2024-02-22T00:00:05.000Z",
+      "featuredInHero": false,
+      "slug": "staff-quarter-iffco-paradip",
+      "title": "Staff Quarter, IFFCO",
+      "location": "Paradip, Odisha",
+      "category": "Residential",
+      "filterCategory": "Residential",
+      "image": "/images/staff-quarter-iffco.jpg",
+      "description": "Functional residential quarters designed for IFFCO staff, emphasizing durability, climate responsiveness, and efficient layout planning for industrial township living.",
+      "projectDetails": "Functional residential quarters designed for IFFCO staff, emphasizing durability, climate responsiveness, and efficient layout planning for industrial township living.",
+      "photos": [
+        {
+          "name": "staff-quarter-iffco.jpg",
+          "url": "/images/staff-quarter-iffco.jpg"
+        }
+      ],
+      "plans": [],
+      "details": {
+        "type": "Residential / Industrial Township",
+        "area": "6,400 sq. ft.",
+        "status": "Completed",
+        "services": [
+          "Architectural Design",
+          "Structural Design",
+          "Quantity Survey"
+        ]
+      },
+      "designIntent": "To create comfortable, standardized living spaces that cater to the needs of industrial workers and their families, with emphasis on community spaces.",
+      "challenges": "Meeting industrial standards while creating warm, livable homes within budget constraints and tight construction timelines."
+    },
+    {
+      "projectId": "SEED-20240222-000006",
+      "createdAt": "2024-02-22T00:00:06.000Z",
+      "featuredInHero": true,
+      "slug": "private-cottage-puri",
+      "title": "Private Cottage",
+      "location": "Puri, Odisha",
+      "category": "Residential",
+      "filterCategory": "Residential",
+      "image": "/images/cottage-puri.jpg",
+      "description": "A compact yet elegant private cottage in the coastal town of Puri. The design balances intimate residential scale with the openness demanded by its beachside setting. It was designed ecologically  and keeping in mind environment and environment material so guest can enjoy stay",
+      "projectDetails": "A compact yet elegant private cottage in the coastal town of Puri. The design balances intimate residential scale with the openness demanded by its beachside setting. It was designed ecologically  and keeping in mind environment and environment material so guest can enjoy stay",
+      "photos": [
+        {
+          "name": "cottage-puri.jpg",
+          "url": "/images/cottage-puri.jpg",
+          "isHero": true
+        }
+      ],
+      "plans": [],
+      "details": {
+        "type": "Residential",
+        "area": "2,800 sq. ft.",
+        "status": "Completed",
+        "services": [
+          "Architectural Design",
+          "Interior Design"
+        ]
+      },
+      "designIntent": "To create a serene retreat that connects the inhabitants with the coastal environment through strategic openings, natural materials, and indoor-outdoor flow.",
+      "challenges": "Designing for coastal climate conditions including salt-air corrosion, monsoon winds, and humidity, while maintaining an open, breezy aesthetic.",
+      "heroTitle": "Strength in Structure.",
+      "heroSubtitle": "Vision in Design.",
+      "heroDetails": "",
+      "heroExcerpt": "A compact yet elegant private cottage in the coastal town of Puri. The design balances intimate r...",
+      "heroImage": "/images/cottage-puri.jpg",
+      "updatedAt": "2026-03-14T20:14:14.383Z"
+    },
+    {
+      "projectId": "SEED-20240222-000007",
+      "createdAt": "2024-02-22T00:00:07.000Z",
+      "featuredInHero": false,
+      "slug": "beautification-sardega-railway",
+      "title": "Beautification of Sardega Railway Siding",
+      "location": "Sardega, MCL",
+      "category": "Urban / Infrastructure",
+      "filterCategory": "Urban Design",
+      "image": "/images/sardega-railway.jpg",
+      "description": "Site development and beautification of the Sardega Railway Siding for Mahanadi Coalfields Limited, transforming an industrial zone into a visually organized and functional space.",
+      "projectDetails": "Site development and beautification of the Sardega Railway Siding for Mahanadi Coalfields Limited, transforming an industrial zone into a visually organized and functional space.",
+      "photos": [
+        {
+          "name": "sardega-railway.jpg",
+          "url": "/images/sardega-railway.jpg"
+        }
+      ],
+      "plans": [],
+      "details": {
+        "type": "Urban / Infrastructure",
+        "area": "2.5 acres",
+        "status": "Completed",
+        "services": [
+          "Architectural Design",
+          "Project Management"
+        ]
+      },
+      "designIntent": "To reimagine an industrial railway siding as a well-organized space that balances operational efficiency with aesthetic improvement and environmental consideration.",
+      "challenges": "Working within active industrial operations while implementing significant visual and functional upgrades to the site."
+    },
+    {
+      "projectId": "SEED-20240222-000008",
+      "createdAt": "2024-02-22T00:00:08.000Z",
+      "featuredInHero": false,
+      "slug": "aiims-bhubaneswar-main-gate",
+      "title": "AIIMS Bhubaneswar Main Gate",
+      "location": "Bhubaneswar, Odisha",
+      "category": "Institutional / Structural",
+      "filterCategory": "Structural",
+      "image": "/images/aiims-gate.jpg",
+      "description": "A bold, contemporary gate structure for one of India's premier medical institutions. The design combines structural expressiveness with institutional gravitas.",
+      "projectDetails": "A bold, contemporary gate structure for one of India's premier medical institutions. The design combines structural expressiveness with institutional gravitas.",
+      "photos": [
+        {
+          "name": "aiims-gate.jpg",
+          "url": "/images/aiims-gate.jpg"
+        }
+      ],
+      "plans": [],
+      "details": {
+        "type": "Institutional / Structural",
+        "area": "N/A",
+        "status": "Completed",
+        "services": [
+          "Architectural Design",
+          "Structural Design"
+        ]
+      },
+      "designIntent": "To create an iconic entry point that reflects the prestige and modernity of AIIMS while providing functional security and traffic management.",
+      "challenges": "Designing a structurally expressive gate that meets security requirements, manages high traffic volumes, and serves as a recognizable landmark."
+    }
+  ],
+  "seedBootstrapped": true
+}

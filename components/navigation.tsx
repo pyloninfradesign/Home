@@ -37,6 +37,15 @@ export function Navigation() {
     setIsMobileMenuOpen(false)
   }, [pathname])
 
+  const openChat = () => {
+    const win = window as Window & { __pylonOpenChat?: () => void }
+    if (typeof win.__pylonOpenChat === 'function') {
+      win.__pylonOpenChat()
+    }
+    window.dispatchEvent(new Event('pylon:open-chat'))
+    setIsMobileMenuOpen(false)
+  }
+
   return (
     <header
       className={cn(
@@ -103,6 +112,18 @@ export function Navigation() {
               {link.label}
             </Link>
           ))}
+          <button
+            type="button"
+            onClick={openChat}
+            className={cn(
+              'rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.15em] uppercase transition-colors duration-300',
+              isTransparent
+                ? 'border-white/30 text-white hover:border-white hover:bg-white/10'
+                : 'border-foreground/20 text-foreground hover:border-foreground'
+            )}
+          >
+            Chat
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -140,6 +161,13 @@ export function Navigation() {
               {link.label}
             </Link>
           ))}
+          <button
+            type="button"
+            onClick={openChat}
+            className="mt-2 rounded-full border border-foreground/20 px-4 py-3 text-left text-sm font-medium tracking-[0.1em] uppercase text-foreground transition-colors hover:border-foreground"
+          >
+            Chat
+          </button>
         </div>
       </div>
     </header>

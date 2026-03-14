@@ -3,6 +3,7 @@ import Link from "next/link";
 const quickLinks = [
   { title: "New Project", href: "/admin/projects/new", desc: "Create a project and set public/employee/customer flags." },
   { title: "Projects", href: "/admin/projects", desc: "Edit status, assign customer, manage uploads." },
+  { title: "Knowledge Base", href: "/admin/knowledge", desc: "Refresh crawled site knowledge and edit AI notes." },
   { title: "Users", href: "/admin/users", desc: "Invite or create customers, employees, and managers." },
   { title: "Audit Logs", href: "/admin/audit", desc: "See who changed what, and when." },
 ];

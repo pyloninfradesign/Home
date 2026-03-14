@@ -4,11 +4,15 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { projects, getFilterCategories } from '@/lib/projects'
+import type { Project } from '@/lib/projects'
 
-export function ProjectGrid() {
+interface ProjectGridProps {
+  projects: Project[]
+  categories: string[]
+}
+
+export function ProjectGrid({ projects, categories }: ProjectGridProps) {
   const [activeFilter, setActiveFilter] = useState('All')
-  const categories = getFilterCategories()
 
   const filteredProjects =
     activeFilter === 'All'

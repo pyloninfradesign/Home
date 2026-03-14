@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { ProjectGrid } from '@/components/projects/project-grid'
+import { getFilterCategories, getProjects } from '@/lib/projects'
 
 export const metadata: Metadata = {
   title: 'Projects | Pylon Infra Design',
@@ -9,7 +10,12 @@ export const metadata: Metadata = {
     'A curated selection of architectural, interior, structural, and urban design works by Pylon Infra Design.',
 }
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const [projects, categories] = await Promise.all([
+    getProjects(),
+    getFilterCategories(),
+  ])
+
   return (
     <>
       {/* Page Header */}
@@ -33,7 +39,7 @@ export default function ProjectsPage() {
       {/* Filter + Grid */}
       <section className="bg-background pb-24 lg:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ProjectGrid />
+          <ProjectGrid projects={projects} categories={categories} />
         </div>
       </section>
 

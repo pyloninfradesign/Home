@@ -1,0 +1,210 @@
+{
+  "events": [
+    {
+      "id": "AUDIT-1773525755983-rji6as",
+      "timestamp": "2026-03-14T22:02:35.983Z",
+      "action": "PROJECT_UPDATE",
+      "actor": {
+        "id": "dev-user",
+        "email": "admin@pylondesign.com",
+        "role": "admin",
+        "name": "Dev Admin"
+      },
+      "target": {
+        "type": "project",
+        "label": "Knowledge base notes"
+      },
+      "details": {
+        "notesLength": 179
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    },
+    {
+      "id": "AUDIT-1773525623703-p2xktm",
+      "timestamp": "2026-03-14T22:00:23.703Z",
+      "action": "PROJECT_UPDATE",
+      "actor": {
+        "id": "dev-user",
+        "email": "admin@pylondesign.com",
+        "role": "admin",
+        "name": "Dev Admin"
+      },
+      "target": {
+        "type": "project",
+        "label": "Knowledge base refresh"
+      },
+      "details": {
+        "pages": 12,
+        "sourceOrigin": "http://localhost:3000"
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    },
+    {
+      "id": "AUDIT-1773525620722-i1veq4",
+      "timestamp": "2026-03-14T22:00:20.722Z",
+      "action": "PROJECT_UPDATE",
+      "actor": {
+        "id": "dev-user",
+        "email": "admin@pylondesign.com",
+        "role": "admin",
+        "name": "Dev Admin"
+      },
+      "target": {
+        "type": "project",
+        "label": "Knowledge base notes"
+      },
+      "details": {
+        "notesLength": 521
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    },
+    {
+      "id": "AUDIT-1773525486712-vyv1kp",
+      "timestamp": "2026-03-14T21:58:06.712Z",
+      "action": "PROJECT_UPDATE",
+      "actor": {
+        "id": "dev-user",
+        "email": "admin@pylondesign.com",
+        "role": "admin",
+        "name": "Dev Admin"
+      },
+      "target": {
+        "type": "project",
+        "label": "Knowledge base refresh"
+      },
+      "details": {
+        "pages": 12,
+        "sourceOrigin": "http://localhost:3000"
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    },
+    {
+      "id": "AUDIT-1773525481951-94x83y",
+      "timestamp": "2026-03-14T21:58:01.951Z",
+      "action": "PROJECT_UPDATE",
+      "actor": {
+        "id": "dev-user",
+        "email": "admin@pylondesign.com",
+        "role": "admin",
+        "name": "Dev Admin"
+      },
+      "target": {
+        "type": "project",
+        "label": "Knowledge base notes"
+      },
+      "details": {
+        "notesLength": 134
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    },
+    {
+      "id": "AUDIT-1773521276042-jr9wtn",
+      "timestamp": "2026-03-14T20:47:56.042Z",
+      "action": "PROJECT_UPDATE",
+      "actor": {
+        "id": "dev-user",
+        "email": "admin@pylondesign.com",
+        "role": "admin",
+        "name": "Dev Admin"
+      },
+      "target": {
+        "type": "project",
+        "label": "Knowledge base refresh"
+      },
+      "details": {
+        "pages": 12,
+        "sourceOrigin": "http://localhost:3000"
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    },
+    {
+      "id": "AUDIT-1773519254385-2lhj5y",
+      "timestamp": "2026-03-14T20:14:14.385Z",
+      "action": "PROJECT_UPDATE",
+      "actor": {
+        "id": "dev-user",
+        "email": "admin@pylondesign.com",
+        "role": "admin",
+        "name": "Dev Admin"
+      },
+      "target": {
+        "type": "project",
+        "id": "SEED-20240222-000006",
+        "label": "Private Cottage"
+      },
+      "details": {
+        "slug": "private-cottage-puri",
+        "featuredInHero": true
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    },
+    {
+      "id": "AUDIT-1773519164064-xu13we",
+      "timestamp": "2026-03-14T20:12:44.064Z",
+      "action": "PROJECT_DELETE",
+      "actor": {
+        "id": "dev-user",
+        "email": "admin@pylondesign.com",
+        "role": "admin",
+        "name": "Dev Admin"
+      },
+      "target": {
+        "type": "project",
+        "id": "PROJECT-20260314-205228",
+        "label": "Project name"
+      },
+      "details": {
+        "slug": "project-name"
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    },
+    {
+      "id": "AUDIT-1773518837373-6nauno",
+      "timestamp": "2026-03-14T20:07:17.373Z",
+      "action": "PROJECT_UPDATE",
+      "actor": {
+        "id": "dev-user",
+        "email": "admin@pylondesign.com",
+        "role": "admin",
+        "name": "Dev Admin"
+      },
+      "target": {
+        "type": "project",
+        "id": "PROJECT-20260314-205228",
+        "label": "Project name"
+      },
+      "details": {
+        "slug": "project-name",
+        "featuredInHero": true
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import ResendProvider from "next-auth/providers/resend";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { SupabaseAdapter } from "@auth/supabase-adapter";
 import { createClient } from "@supabase/supabase-js";
+import { logAuditEvent } from "@/lib/audit";
 
 // Role shape used across the app
 export type AppUserRole = "admin" | "manager" | "employee" | "customer";
@@ -84,6 +85,19 @@ providers.push(
           name: "Dev Admin",
         };
       }
+      await logAuditEvent({
+        action: "AUTH_SIGN_IN_FAILED",
+        actor: {
+          email: typeof credentials.email === "string" ? credentials.email : null,
+        },
+        target: {
+          type: "auth",
+          label: "Developer Login",
+        },
+        details: {
+          provider: "credentials",
+        },
+      });
       return null;
     },
   }),
@@ -106,6 +120,21 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const disabled = (user as any)?.user_metadata?.disabled ?? (user as any)?.disabled;
       if (disabled) return false;
+      await logAuditEvent({
+        action: "AUTH_SIGN_IN",
+        actor: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          id: (user as any)?.id,
+          email: user.email,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          role: (user as any)?.role ?? (user as any)?.user_metadata?.role ?? null,
+          name: user.name,
+        },
+        target: {
+          type: "auth",
+          label: "User session",
+        },
+      });
       return true;
     },
     async jwt({ token, user }) {
@@ -124,9 +153,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         token.role = roleFromUser ?? (token.role as AppUserRole | undefined) ?? "customer";
         if (typeof disabledFromUser === "boolean") {
-          // carry disabled flag forward
-          // @ts-expect-error custom token field
-          token.disabled = disabledFromUser;
+          (token as JWT & { disabled?: boolean }).disabled = disabledFromUser;
         }
       }
 
@@ -141,10 +168,25 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (session.user) {
         session.user.id = token.sub as string;
         session.user.role = (token.role as AppUserRole | undefined) ?? "customer";
-        // @ts-expect-error custom session field
-        session.user.disabled = (token as any).disabled ?? false;
+        session.user.disabled = (token as JWT & { disabled?: boolean }).disabled ?? false;
       }
       return session;
+    },
+  },
+  events: {
+    async signOut(message) {
+      const token = "token" in message ? message.token : null;
+      await logAuditEvent({
+        action: "AUTH_SIGN_OUT",
+        actor: {
+          email: token?.email ?? null,
+          role: (token?.role as AppUserRole | undefined) ?? null,
+        },
+        target: {
+          type: "auth",
+          label: "User session",
+        },
+      });
     },
   },
 });

@@ -57,7 +57,7 @@ export default async function NewUserPage({ searchParams }: { searchParams: Reco
       if (upsertError) {
         redirect(`/admin/users/new?error=${encodeURIComponent(upsertError.message)}`);
       }
-
+/*
       try {
         const signinLink = `${process.env.NEXTAUTH_URL ?? "http://127.0.0.1:4100"}/api/auth/signin?callbackUrl=/admin`;
         if (process.env.RESEND_API_KEY && process.env.EMAIL_FROM) {
@@ -110,7 +110,7 @@ export default async function NewUserPage({ searchParams }: { searchParams: Reco
       redirect(`/admin/users/new?error=${encodeURIComponent(message)}`);
     }
   }
-
+*/
   return (
     <main className="mx-auto flex max-w-3xl flex-col gap-6 py-10">
       <div className="flex flex-col gap-3">

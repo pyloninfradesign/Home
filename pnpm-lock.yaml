@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@auth/supabase-adapter':
         specifier: ^1.11.1
-        version: 1.11.1(@supabase/supabase-js@2.99.1)(nodemailer@8.0.1)
+        version: 1.11.1(@supabase/supabase-js@2.99.1)(nodemailer@7.0.13)
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.10.0(react-hook-form@7.71.1(react@19.2.4))
@@ -130,13 +130,13 @@ importers:
         version: 16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       next-auth:
         specifier: ^5.0.0-beta.30
-        version: 5.0.0-beta.30(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(nodemailer@8.0.1)(react@19.2.4)
+        version: 5.0.0-beta.30(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(nodemailer@7.0.13)(react@19.2.4)
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       nodemailer:
-        specifier: ^8.0.1
-        version: 8.0.1
+        specifier: ^7.0.13
+        version: 7.0.13
       react:
         specifier: 19.2.4
         version: 19.2.4
@@ -158,6 +158,9 @@ importers:
       resend:
         specifier: ^6.9.2
         version: 6.9.2
+      server-only:
+        specifier: ^0.0.1
+        version: 0.0.1
       sonner:
         specifier: ^1.7.1
         version: 1.7.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -1659,8 +1662,8 @@ packages:
   node-releases@2.0.27:
     resolution: {integrity: sha512-nmh3lCkYZ3grZvqcCH+fjmQ7X+H0OeZgP40OierEaAptX4XofMh5kwNbWh7lBduUzCcV/8kZ+NDLCwm2iorIlA==}
 
-  nodemailer@8.0.1:
-    resolution: {integrity: sha512-5kcldIXmaEjZcHR6F28IKGSgpmZHaF1IXLWFTG+Xh3S+Cce4MiakLtWY+PlBU69fLbRa8HlaGIrC/QolUpHkhg==}
+  nodemailer@7.0.13:
+    resolution: {integrity: sha512-PNDFSJdP+KFgdsG3ZzMXCgquO7I6McjY2vlqILjtJd0hy8wEvtugS9xKRF2NWlPNGxvLCXlTNIae4serI7dinw==}
     engines: {node: '>=6.0.0'}
 
   oauth4webapi@3.8.5:
@@ -1800,6 +1803,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+
   sharp@0.34.5:
     resolution: {integrity: sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -1923,7 +1929,7 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@auth/core@0.41.0(nodemailer@8.0.1)':
+  '@auth/core@0.41.0(nodemailer@7.0.13)':
     dependencies:
       '@panva/hkdf': 1.2.1
       jose: 6.2.1
@@ -1931,9 +1937,9 @@ snapshots:
       preact: 10.24.3
       preact-render-to-string: 6.5.11(preact@10.24.3)
     optionalDependencies:
-      nodemailer: 8.0.1
+      nodemailer: 7.0.13
 
-  '@auth/core@0.41.1(nodemailer@8.0.1)':
+  '@auth/core@0.41.1(nodemailer@7.0.13)':
     dependencies:
       '@panva/hkdf': 1.2.1
       jose: 6.2.1
@@ -1941,11 +1947,11 @@ snapshots:
       preact: 10.24.3
       preact-render-to-string: 6.5.11(preact@10.24.3)
     optionalDependencies:
-      nodemailer: 8.0.1
+      nodemailer: 7.0.13
 
-  '@auth/supabase-adapter@1.11.1(@supabase/supabase-js@2.99.1)(nodemailer@8.0.1)':
+  '@auth/supabase-adapter@1.11.1(@supabase/supabase-js@2.99.1)(nodemailer@7.0.13)':
     dependencies:
-      '@auth/core': 0.41.1(nodemailer@8.0.1)
+      '@auth/core': 0.41.1(nodemailer@7.0.13)
       '@supabase/supabase-js': 2.99.1
     transitivePeerDependencies:
       - '@simplewebauthn/browser'
@@ -3198,13 +3204,13 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  next-auth@5.0.0-beta.30(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(nodemailer@8.0.1)(react@19.2.4):
+  next-auth@5.0.0-beta.30(next@16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(nodemailer@7.0.13)(react@19.2.4):
     dependencies:
-      '@auth/core': 0.41.0(nodemailer@8.0.1)
+      '@auth/core': 0.41.0(nodemailer@7.0.13)
       next: 16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react: 19.2.4
     optionalDependencies:
-      nodemailer: 8.0.1
+      nodemailer: 7.0.13
 
   next-themes@0.4.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
@@ -3237,7 +3243,7 @@ snapshots:
 
   node-releases@2.0.27: {}
 
-  nodemailer@8.0.1: {}
+  nodemailer@7.0.13: {}
 
   oauth4webapi@3.8.5: {}
 
@@ -3370,6 +3376,8 @@ snapshots:
 
   semver@7.7.4:
     optional: true
+
+  server-only@0.0.1: {}
 
   sharp@0.34.5:
     dependencies:

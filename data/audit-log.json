@@ -1,6 +1,23 @@
 {
   "events": [
     {
+      "id": "AUDIT-1773531828778-bhzjin",
+      "timestamp": "2026-03-14T23:43:48.778Z",
+      "action": "AUTH_SIGN_OUT",
+      "actor": {
+        "email": "admin@pylondesign.com",
+        "role": "admin"
+      },
+      "target": {
+        "type": "auth",
+        "label": "User session"
+      },
+      "request": {
+        "ip": "::1",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+      }
+    },
+    {
       "id": "AUDIT-1773525755983-rji6as",
       "timestamp": "2026-03-14T22:02:35.983Z",
       "action": "PROJECT_UPDATE",

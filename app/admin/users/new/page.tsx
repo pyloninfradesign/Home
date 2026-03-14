@@ -83,7 +83,7 @@ export default async function NewUserPage({ searchParams }: { searchParams: Reco
         }
       } catch (err) {
         console.error("Resend invite failed", err);
-      }
+      }*/
 
       revalidatePath("/admin/users");
       await logAuditEvent({
@@ -110,7 +110,7 @@ export default async function NewUserPage({ searchParams }: { searchParams: Reco
       redirect(`/admin/users/new?error=${encodeURIComponent(message)}`);
     }
   }
-*/
+
   return (
     <main className="mx-auto flex max-w-3xl flex-col gap-6 py-10">
       <div className="flex flex-col gap-3">

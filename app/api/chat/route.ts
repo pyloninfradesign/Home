@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server'
+import { readFile } from 'node:fs/promises'
+import path from 'node:path'
 import { getKnowledgeBase } from '@/lib/chat-knowledge'
 
 interface ChatMessage {
@@ -32,6 +34,46 @@ const GENERAL_OUT_OF_SCOPE_REPLIES = [
   'I do my best work inside the Pylon brief. Ask me about the studio, its work, its process, or how to contact the team.',
 ]
 
+const SERVICES = [
+  {
+    title: 'Architectural Design',
+    description:
+      'Comprehensive building design from concept through construction, integrating BIM workflows and 3D modeling for precision and clarity.',
+  },
+  {
+    title: 'Interior Design',
+    description:
+      'Thoughtful interior spaces that balance aesthetics with functionality, creating environments that inspire and perform.',
+  },
+  {
+    title: 'Structural Design',
+    description:
+      'Engineering excellence in structural systems, ensuring safety, durability, and material efficiency across all project types.',
+  },
+  {
+    title: 'Project Management',
+    description:
+      'End-to-end project oversight from planning to handover, ensuring quality, timeline adherence, and budget control.',
+  },
+  {
+    title: 'Quantity Survey & Estimation',
+    description:
+      'Detailed cost analysis and quantity surveying to deliver accurate budgets and optimize resource allocation.',
+  },
+] as const
+
+const PROJECTS_DATA_PATH = path.join(process.cwd(), 'data', 'projects.json')
+
+interface StoredProject {
+  title?: string
+  location?: string
+  category?: string
+  details?: {
+    status?: string
+    services?: string[]
+  }
+}
+
 interface ToolLikePayload {
   name?: string
   parameters?: Record<string, unknown>
@@ -59,6 +101,16 @@ function buildSystemPrompt(knowledgeBase: string) {
 function extractFirstMatch(text: string, pattern: RegExp) {
   const match = text.match(pattern)
   return match?.[1]?.trim() ?? ''
+}
+
+async function readStoredProjects() {
+  try {
+    const raw = await readFile(PROJECTS_DATA_PATH, 'utf8')
+    const parsed = JSON.parse(raw) as { projects?: StoredProject[] }
+    return Array.isArray(parsed.projects) ? parsed.projects : []
+  } catch {
+    return []
+  }
 }
 
 function parseToolLikePayload(content: string): ToolLikePayload | null {
@@ -127,6 +179,85 @@ function answerFromKnowledgeBase(question: string, knowledgeBase: string) {
     normalized.includes('can you do')
   ) {
     return 'I can answer questions about Pylon Infra Design, its projects, services, process, team, and contact details based on the public website.'
+  }
+
+  return null
+}
+
+async function buildStructuredAnswer(question: string, knowledgeBase: string) {
+  const normalized = question.toLowerCase()
+  const projects = await readStoredProjects()
+
+  const isServicesQuestion =
+    normalized.includes('service') ||
+    normalized.includes('services') ||
+    normalized.includes('products and services') ||
+    normalized.includes('what do you offer')
+
+  const isProjectsQuestion =
+    (normalized.includes('project') || normalized.includes('portfolio')) &&
+    !normalized.includes('have a project')
+
+  const email = extractFirstMatch(
+    knowledgeBase,
+    /\b([A-Z0-9._%+-]+@pyloninfradesign\.com)\b/i
+  )
+  const phone = extractFirstMatch(knowledgeBase, /(\+91\s*\d{3}\s*X{3}\s*X{4})/i)
+  const office = extractFirstMatch(knowledgeBase, /Office\s+(Bhubaneswar,\s*Odisha,\s*India)/i)
+
+  if (isServicesQuestion && !isProjectsQuestion) {
+    const serviceLines = SERVICES.map(
+      (service) => `- ${service.title}: ${service.description}`
+    ).join('\n')
+
+    return [
+      'Services',
+      serviceLines,
+      '',
+      'Note',
+      '- Pylon Infra Design is a service-based architecture and design practice, not a packaged-product business.',
+    ].join('\n')
+  }
+
+  if (isProjectsQuestion && projects.length > 0) {
+    const grouped = new Map<string, StoredProject[]>()
+    for (const project of projects) {
+      const key = project.category || 'Other'
+      grouped.set(key, [...(grouped.get(key) ?? []), project])
+    }
+
+    const sections = Array.from(grouped.entries())
+      .map(([category, categoryProjects]) => {
+        const lines = categoryProjects
+          .slice(0, 4)
+          .map((project) => `- ${project.title} (${project.location || 'Location not listed'})`)
+          .join('\n')
+        return `${category}\n${lines}`
+      })
+      .join('\n\n')
+
+    return [
+      'Projects',
+      sections,
+      '',
+      'Summary',
+      `- Total projects listed: ${projects.length}`,
+      '- The portfolio includes residential, institutional, urban design, infrastructure, and government work.',
+    ].join('\n')
+  }
+
+  if (
+    normalized.includes('contact') &&
+    (normalized.includes('details') || normalized.includes('how') || normalized.includes('reach'))
+  ) {
+    return [
+      'Contact Details',
+      office ? `- Office: ${office}` : '',
+      email ? `- Email: ${email}` : '',
+      phone ? `- Phone: ${phone}` : '',
+    ]
+      .filter(Boolean)
+      .join('\n')
   }
 
   return null
@@ -252,6 +383,14 @@ export async function POST(request: Request) {
 
     if (isClearlyOutOfScope(latestUserQuestion)) {
       return NextResponse.json({ message: buildOutOfScopeReply(latestUserQuestion) })
+    }
+
+    const structuredAnswer = await buildStructuredAnswer(
+      latestUserQuestion,
+      knowledgeBase
+    )
+    if (structuredAnswer) {
+      return NextResponse.json({ message: formatForChat(structuredAnswer) })
     }
 
     const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
